@@ -1,0 +1,61 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "train",
+            "type": "python",
+            "request": "launch",
+            "program": "code/a2_run.py",
+            "console": "integratedTerminal",
+            "args": [
+                "train",
+                "data/Hansard/Training/",
+                "vocab.e.gz", "vocab.f.gz", "train.txt.gz", "dev.txt.gz", "model_wo_att.pt.gz",
+                "--device","cuda",
+                //"--batch-size","100",
+                "--with-attention",
+                //"--cell-type","gru",
+                "--epochs","12",
+                //"--encoder-hidden-size","128"
+            ]
+        },
+        {
+            "name": "test",
+            "type": "python",
+            "request": "launch",
+            "program": "code/a2_run.py",
+            "console": "integratedTerminal",
+            "args": [
+                "test",
+                "data/Hansard/Testing/",
+                "vocab.e.gz", "vocab.f.gz", "model_wo_att.pt.gz",
+                "--with-attention",
+                "--device","cuda",
+            ]
+        },
+        {
+            "name": "test_bleu",
+            "type": "python",
+            "request": "launch",
+            "module": "pytest",
+            "console": "integratedTerminal",
+            "args": [
+                "/Users/shaobohu/Documents/我的坚果云/project/csc401_A2-master/A2/code/test_a2_bleu_score.py",
+            ]
+        }
+        ,
+        {
+            "name": "test_model",
+            "type": "python",
+            "request": "launch",
+            "module": "pytest",
+            "console": "integratedTerminal",
+            "args": [
+                "/Users/shaobohu/Documents/我的坚果云/project/csc401_A2-master/A2/code/test_a2_encoder_decoder.py",
+            ]
+        }
+    ]
+}

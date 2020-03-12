@@ -1,0 +1,33 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "run train",
+            "type": "python",
+            "request": "launch",
+            "program": "/Users/shaobohu/Desktop/csc401_A2-master/A2/code/a2_run.py",
+            "console": "integratedTerminal",
+            "args": [
+                "train",
+                "--training_dir","/Users/shaobohu/Desktop/csc401_A2-master/A2/data/Hansard/Training",
+                "--english_vocab","/Users/shaobohu/Desktop/csc401_A2-master/A2/data/Hansard/Training/hansard.36.1.house.debates.001.e",
+                "--french_vocab","/Users/shaobohu/Desktop/csc401_A2-master/A2/data/Hansard/Training/hansard.36.1.house.debates.001.f",
+                "--train_prefixes","",
+                "--source-lang","f",
+                "--epochs","100",
+                //"--patience", "10",
+                "--seed","2020",
+                "--with-attention",
+                "--word-embedding-size","1024",
+                "--encoder-hidden-size","512",
+                "--encoder-num-hidden-layers","2",
+                "--cell-type","lstm",
+                "--encoder-dropout","0.1",
+                "--beam-width","4"
+            ]    
+        }
+    ]
+}
